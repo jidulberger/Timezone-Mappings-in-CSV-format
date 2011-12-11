@@ -9,6 +9,12 @@ do
    city=`echo $line | awk -F, '{print $1}'`
    state=`echo $line | awk -F, '{print $2}'`
    olson=`echo $line | awk -F, '{print $3}'`
+
+   if test "$counter" -ge 2
+   then
+   echo ","
+   fi
+
    echo "
    {     
       \"pk\": $counter,
@@ -16,9 +22,9 @@ do
       \"fields\": {
          \"city\": \"${city}\",
          \"state_abbrev\": \"${state}\",
-         \"olson_timezone\": \"${olson}\",
+         \"olson_timezone\": \"${olson}\"
       }
-   },    
+   }
    "
    counter=$(( $counter + 1 ))
 
