@@ -18,7 +18,7 @@ do
    echo "
    {     
       \"pk\": $counter,
-      \"model\": \"profiles.timezones_by_country_code\",
+      \"model\": \"profiles.timezonesbycountrycode\",
       \"fields\": {
          \"country_code\": \"${country}\",
          \"olson_timezone\": \"${olson}\"

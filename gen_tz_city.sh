@@ -11,7 +11,7 @@ do
    olson=`echo $line | awk -F, '{print $3}'`
 
    city_upper=`echo $city | tr '[:lower:]' '[:upper:]'`
-   zips=`grep "${city_upper}" ./free-zipcode-database.csv | grep \"${state}\" | awk -F, '{print $1}' | sed 's/\"//g'`
+   zips=`grep "\"${city_upper}\"" ./free-zipcode-database.csv | grep \"${state}\" | awk -F, '{print $1}' | sed 's/\"//g'`
 
    for z in $zips
    do
@@ -24,7 +24,7 @@ do
    echo "
    {     
       \"pk\": $counter,
-      \"model\": \"profiles.timezones_by_us_city\",
+      \"model\": \"profiles.timezonesbyuscity\",
       \"fields\": {
          \"city\": \"${city}\",
          \"state_abbrev\": \"${state}\",
