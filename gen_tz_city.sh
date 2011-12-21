@@ -28,7 +28,7 @@ do
       \"fields\": {
          \"city\": \"${city}\",
          \"state_abbrev\": \"${state}\",
-         \"olson_timezone\": \"${olson}\"
+         \"olson_timezone\": \"${olson}\",
          \"zipcode\": \"${z}\"
       }
    }
